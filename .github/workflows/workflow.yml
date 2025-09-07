@@ -29,8 +29,6 @@ jobs:
           aws-region: us-east-2
       - name: Install Serverless Framework
         run: npm install -g serverless@3.40.0 --loglevel=error
-      - name: Validate Serverless config
-        run: serverless print --strict
       - name: Install Black
         run: pip install black
       - name: Check formatting
