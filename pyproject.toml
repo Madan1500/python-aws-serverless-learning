@@ -1,0 +1,20 @@
+[tool.black]
+line-length = 88
+target-version = ["py311"]  # Match your Python runtime in AWS Lambda
+include = '\.pyi?$'
+exclude = '''
+/(
+    .venv
+  | venv
+  | build
+  | dist
+  | migrations
+  | node_modules
+  | .serverless
+  | package.json
+  | package-lock.json
+  | .prettierrc
+  | mocks
+  | __pycache__
+)/
+'''

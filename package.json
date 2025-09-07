@@ -1,0 +1,20 @@
+{
+  "name": "python-aws",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write '**/*.{js,jsx,json,ts,tsx,css,md}'",
+    "deploy": "serverless deploy --aws-profile python_aws",
+    "remove": "serverless remove --aws-profile python_aws",
+    "info": "serverless info --aws-profile python_aws"
+  },
+  "author": "Madan",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "serverless": "^4.18.2"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  }
+}
