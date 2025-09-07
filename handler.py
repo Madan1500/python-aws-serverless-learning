@@ -2,9 +2,8 @@ import json
 
 
 def hello(event, context):
-    name = event.get("queryStringParameters", {}).get("name", "stranger")
     body = {
-        "message": "Hello, {}. This is your Python Lambda function executed by Serverless Framework!".format(name),
+        "message": "ping pong!",
         "input": event,
     }
 
@@ -12,11 +11,3 @@ def hello(event, context):
 
     return response
 
-    # Use this code if you don't use the http event with the LAMBDA-PROXY
-    # integration
-    """
-    return {
-        "message": "Go Serverless v1.0! Your function executed successfully!",
-        "event": event
-    }
-    """
