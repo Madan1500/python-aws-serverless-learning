@@ -15,7 +15,8 @@ jobs:
           python-version: "3.10"
       - run: pip install black
       - run: black --check .
-      
+      - run: black .
+
 
   deploy:
     if: github.event_name == 'push'
