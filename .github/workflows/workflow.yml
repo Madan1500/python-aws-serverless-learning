@@ -28,7 +28,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-2
       - name: Install Serverless Framework
-        run: npm install -g serverless
+        run: npm install -g serverless@3.39.0
       - name: Install Black
         run: pip install black
       - name: Check formatting
