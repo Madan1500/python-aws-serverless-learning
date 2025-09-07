@@ -59,13 +59,13 @@ provider:
 #    variable1: value1
 
 # you can add packaging information here
-  package:
-    exclude:
-      - venv/**
-      - .venv/**
-      - requirements-dev.txt
-      - node_modules/**
-      - tests/**
+package:
+  exclude:
+    - venv/**
+    - .venv/**
+    - requirements-dev.txt
+    - node_modules/**
+    - tests/**
 
 functions:
   hello:
