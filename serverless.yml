@@ -24,8 +24,6 @@ provider:
   environment:
   apiGateway:
     usagePlan:
-      name: Basic
-      description: Basic plan
       quota:
         limit: 1000
         period: MONTH
