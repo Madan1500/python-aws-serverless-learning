@@ -127,6 +127,7 @@ functions:
 #    environment:
 #      variable2: value2
 
+
 # you can add CloudFormation resource templates here
 #resources:
 #  Resources:
@@ -138,15 +139,3 @@ functions:
 #     NewOutput:
 #       Description: "Description for the output"
 #       Value: "Some output value"
-
-layers:
-  hello:
-    path: layer-dir
-    name: ${sls:stage}-layerName
-    description: My layer for ${sls:stage} stage
-    compatibleRuntimes:
-      - python3.10
-    compatibleArchitectures: [x86_64, arm64]
-    licenseInfo: 'MIT'
-    allowedAccounts: ['*']
-    retain: false
