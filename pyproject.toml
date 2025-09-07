@@ -1,5 +1,5 @@
 [tool.black]
-line-length = 88
+line-length = 80
 target-version = ["py311"]  # Match your Python runtime in AWS Lambda
 include = '\.pyi?$'
 exclude = '''
