@@ -35,6 +35,16 @@ provider:
 # API Gateway has maximum timeout of 30 seconds
   timeout: 25
   environment:
+  apiGateway:
+    usagePlan:
+      name: Basic
+      description: Basic plan
+      quota:
+        limit: 1000
+        period: MONTH
+      throttle:
+        burstLimit: 10
+        rateLimit: 5
 
 # you can add statements to the Lambda function's IAM Role here
 #  iam:
