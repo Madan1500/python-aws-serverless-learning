@@ -32,6 +32,23 @@ provider:
       throttle:
         burstLimit: 10
         rateLimit: 5
+  
+  logs:
+    lambda:
+      # The Log Format to be used for all lambda functions (default: Text)
+      logFormat: JSON
+      # The Application Log Level to be used, This can only be set if `logFormat` is set to `JSON`
+      applicationLogLevel: ERROR
+      # The System Log Level to be used, This can only be set if `logFormat` is set to `JSON`
+      systemLogLevel: INFO
+      # The LogGroup that will be used by default. If this is set the Framework will not create LogGroups for any functions
+      logGroup: /aws/lambda/global-log-group
+
+    # Enable HTTP API logs
+    # This can either be set to `httpApi: true` to use defaults, or configured via subproperties
+    # Can only be configured if the API is created by Serverless Framework
+    httpApi:
+      format: '{ "requestId":"$context.requestId", "ip": "$context.identity.sourceIp", "requestTime":"$context.requestTime", "httpMethod":"$context.httpMethod","routeKey":"$context.routeKey", "status":"$context.status","protocol":"$context.protocol", "responseLength":"$context.responseLength" }'
 
 # you can add statements to the Lambda function's IAM Role here
 #  iam:
@@ -68,7 +85,7 @@ functions:
   hello:
     handler: handler.hello
     events:
-      - http:
+      - httpApi:
           path: hello
           method: get
 
@@ -123,3 +140,15 @@ functions:
 #     NewOutput:
 #       Description: "Description for the output"
 #       Value: "Some output value"
+
+layers:
+  hello:
+    path: layer-dir
+    name: ${sls:stage}-layerName
+    description: My layer for ${sls:stage} stage
+    compatibleRuntimes:
+      - python3.10
+    compatibleArchitectures: [x86_64, arm64]
+    licenseInfo: 'MIT'
+    allowedAccounts: ['*']
+    retain: false
