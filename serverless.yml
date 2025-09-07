@@ -83,8 +83,8 @@ functions:
   hello:
     handler: handler.hello
     events:
-      - httpApi:
-          path: /hello
+      - http:
+          path: hello
           method: get
 
 #    The following are a few example events you can configure
