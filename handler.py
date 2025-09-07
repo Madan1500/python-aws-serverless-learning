@@ -4,9 +4,7 @@ import json
 def hello(event, context):
     name = event.get("queryStringParameters", {}).get("name", "stranger")
     body = {
-        "message": "Hello, {}. This is your Python Lambda function executed by Serverless Framework!".format(
-            name
-        ),
+        "message": "Hello, {}. This is your Python Lambda function executed by Serverless Framework!".format(name),
         "input": event,
     }
 
